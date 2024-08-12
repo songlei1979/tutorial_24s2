@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>
+    {{ object.question_text}}
+</h1>
+{% for choice in object.choice_set.all %}
+    <p>{{ choice.choice_text}}</p>
+{% endfor %}
+</body>
+
+</html>
