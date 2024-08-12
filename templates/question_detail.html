@@ -9,5 +9,11 @@
     <li>{{ choice.choice_text }}</li>
     {% endfor %}
 </ul>
+<form action="{% url 'create_choice' %}" method="post">
+    {% csrf_token %}
+    <input name="question_id" type="hidden" value="{{ question.id }}">
+    Choice:<input name="choice_text">
+    <input type="submit" value="Create choice">
+</form>
 </body>
 </html>

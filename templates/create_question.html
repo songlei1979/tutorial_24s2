@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>Create Question</h1>
+
+<form action="{% url 'create_question' %}" method="post">
+    {% csrf_token %}
+    Question: <input name="question_text" type="text"></br>
+    <input type="submit" value="Submit">
+</form>
+{{ message }}
+<a href="{% url 'questions' %}">Back to question list</a>
+</body>
+</html>
