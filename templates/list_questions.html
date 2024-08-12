@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Questions</title>
+</head>
+<body>
+<ul>
+    <li>
+        <a href={% url 'home' %}>
+            Home
+        </a>
+    </li>
+</ul>
+<h1>
+    Questions
+</h1>
+{% for question in questions %}
+    <p>
+        <a href={% url 'question_detail' question.id %}>
+            {{ question.question_text }}
+        </a>
+        {{ question.pub_date }}
+        {{ question.choice_set.all }}
+    </p>
+{% endfor %}
+
+</body>
+</html>
